@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Observable } from 'rxjs';
 import { AppService } from './app.service';
 import { CreateUserRequest } from './create-user-request.dto';
 
@@ -17,7 +18,7 @@ export class AppController {
   }
 
   @Get('analytics')
-  getAnalytics() {
+  getAnalytics(): Observable<any> {
     return this.appService.getAnalytics();
   }
 }

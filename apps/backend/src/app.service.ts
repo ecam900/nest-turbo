@@ -1,5 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
+import { Observable } from 'rxjs';
 import { CreateUserRequest } from './create-user-request.dto';
 import { CreateUserEvent } from './create-user.event';
 
@@ -31,7 +32,7 @@ export class AppService {
     );
   }
 
-  getAnalytics() {
+  getAnalytics(): Observable<any> {
     return this.analyticsClient.send({ cmd: 'get_analytics' }, {});
   }
 }

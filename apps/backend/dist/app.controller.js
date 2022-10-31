@@ -14,6 +14,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppController = void 0;
 const common_1 = require("@nestjs/common");
+const rxjs_1 = require("rxjs");
 const app_service_1 = require("./app.service");
 const create_user_request_dto_1 = require("./create-user-request.dto");
 let AppController = class AppController {
@@ -47,7 +48,7 @@ __decorate([
     (0, common_1.Get)('analytics'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
+    __metadata("design:returntype", rxjs_1.Observable)
 ], AppController.prototype, "getAnalytics", null);
 AppController = __decorate([
     (0, common_1.Controller)(),

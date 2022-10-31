@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { AppService } from './app.service';
 import { CreateUserRequest } from './create-user-request.dto';
 export declare class AppController {
@@ -5,4 +6,5 @@ export declare class AppController {
     constructor(appService: AppService);
     getHello(): string;
     createUser(createUserRequest: CreateUserRequest): void;
+    getAnalytics(): Observable<any>;
 }
